@@ -4,20 +4,11 @@ import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
 export const { chains, provider } = configureChains(
-  [
-    chain.mainnet,
-    chain.polygonMumbai,
-    chain.rinkeby,
-    chain.optimism,
-    chain.arbitrum,
-    chain.polygon,
-    chain.localhost,
-    chain.hardhat,
-  ],
+  [chain.polygonMumbai, chain.rinkeby],
   [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
 );
 const { connectors } = getDefaultWallets({
-  appName: "Web3 Starter Kit",
+  appName: "Qubiq",
   chains,
 });
 export const wagmiClient = createClient({

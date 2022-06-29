@@ -1,13 +1,13 @@
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { ChakraProvider } from "@chakra-ui/react";
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { darkTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiConfig } from "wagmi";
 import { wagmiClient, chains } from "../helpers/rainbowSetup";
 
 function MyApp({ Component, pageProps }) {
   const appInfo = {
-    appName: "🦄Web3 Starter Kit",
+    appName: "Qubiq",
   };
 
   return (
@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
         coolMode
         appInfo={appInfo}
         chains={chains}
+        theme={darkTheme()}
       >
         <ChakraProvider>
           <Component {...pageProps} />
